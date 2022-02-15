@@ -9,23 +9,25 @@ from auth_data import *
 def login(username, password):
     # Подключение WebDriver(Chrome) через менеджер, обычный способ из директории не сработал!
     browser = webdriver.Chrome(ChromeDriverManager().install())
-
+    # Загрузка сайта + ждем от 3 до 5 сек для уверености
     browser.get("https://www.instagram.com/")
     time.sleep(random.randrange(3, 5))
-
-    username_input = browser.find_elements_by_name("username")
+    # Ищем елемент username на странице, очищаем + заполняем именем из файла auth_data
+    username_input = browser.find_element_by_name("username")
     username_input.clear()
     username_input.send_keys(username)
 
     time.sleep(2)
 
-    password_input = browser.find_elements_by_name("password")
+    password_input = browser.find_element_by_name("password")
     password_input.clear()
     password_input.send_keys(password)
 
     time.sleep(2)
 
     password_input.send_keys(Keys.ENTER)
+
+    time.sleep(2)
 
     # Закрытие окна, и на всякий случай браузер полностью
     browser.close()
