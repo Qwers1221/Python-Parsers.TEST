@@ -32,7 +32,7 @@ def login(username, password):
         print(ex) # Вывод ошибки в консоль
 
 # Функция поиска в инсте по хештегу
-def hashtag_search_liker(username, password, hashtag):
+def hashtag_liker_disliker(username, password, hashtag):
     login(username, password) # Авторизация в инсте
     # Проверка на ошибку
     try:
@@ -72,4 +72,4 @@ def hashtag_search_liker(username, password, hashtag):
         browser.close()
         browser.quit()
 
-hashtag_search_liker(username, password, "surfing")
+hashtag_liker_disliker(username, password, "surfing")
