@@ -1,3 +1,3 @@
 # Instagram
-username = "test"
-password = "testtesttest"
+username = "testPRS"
+password = "testPRS1221"
